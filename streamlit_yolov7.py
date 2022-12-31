@@ -83,10 +83,10 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
             """
             <style>
             .reportview-container {
-                background: url("https://raw.githubusercontent.com/ra1729i6/ObjectDetectionMech/main/misc/ZwdNYK.jpeg")
+                background: url("https://raw.githubusercontent.com/stevensmiley1989/STREAMLIT_YOLOV7/main/misc/IMG_0512_reduce.JPG")
             }
         .sidebar .sidebar-content {
-                background: url("https://raw.githubusercontent.com/ra1729i6/ObjectDetectionMech/main/misc/galaxy-11098__340.jpg")
+                background: url("https://raw.githubusercontent.com/stevensmiley1989/STREAMLIT_YOLOV7/main/misc/IMG_0512_reduce.JPG")
             }
             </style>
             """,
