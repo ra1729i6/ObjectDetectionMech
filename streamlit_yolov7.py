@@ -83,10 +83,10 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
             """
             <style>
             .reportview-container {
-                background: url("https://github.com/ra1729i6/ObjectDetectionMech/blob/cfd12ad4291dc9010ea1e9e6eefab46903378bae/misc/ZwdNYK.jpeg")
+                background: url("https://raw.githubusercontent.com/ra1729i6/ObjectDetectionMech/main/misc/ZwdNYK.jpeg")
             }
         .sidebar .sidebar-content {
-                background: url("https://github.com/ra1729i6/ObjectDetectionMech/blob/cfd12ad4291dc9010ea1e9e6eefab46903378bae/misc/galaxy-11098__340.jpg")
+                background: url("https://raw.githubusercontent.com/ra1729i6/ObjectDetectionMech/main/misc/galaxy-11098__340.jpg")
             }
             </style>
             """,
@@ -151,7 +151,7 @@ if __name__=='__main__':
     #INPUTS for YOLOV7
     img_size=1056
     path_yolov7_weights="weights/best.pt"
-    path_img_i="https://github.com/ra1729i6/ObjectDetectionMech/blob/88f9c7e0c02b1f9d85cead24238c231a67bf6493/misc/img_01_425005700_00314_jpg.rf.ac0149f8f8bfab71271069f0357ec85b.jpg"
+    path_img_i="https://raw.githubusercontent.com/ra1729i6/ObjectDetectionMech/main/misc/img_01_425005700_00314_jpg.rf.ac0149f8f8bfab71271069f0357ec85b.jpg"
     #INPUTS for webapp
     app.capt="Initial Image"
     app.new_yolo_model(img_size,path_yolov7_weights,path_img_i)
