@@ -160,27 +160,27 @@ if __name__=='__main__':
     features = np.array([properties[0],properties[1],properties[2],properties[3],properties[4]]);
     filename = 'gclm_model.sav'; 
     neigh1 = pickle.load(open(filename, 'rb'));
-    testt1=neigh1.predict(X_test);
-    if testt1==1:
-       st.write( 'crease') ;
-    elif testt1== 2:
-        st.write( 'crescent_gap');
-    elif testt1 == 3:
-        st.write( 'inclusion');
-    elif testt1 == 4 :
-       st.write( 'oil_spot');
-    elif testt1 == 5:
-        st.write( 'punching_hole');
-    elif testt1 == 6:
-        st.write( 'rolled_pit');
-    elif testt1 == 7:
-        st.write( 'silk_spot');
-    elif testt1 == 8:
-        st.write( 'waist folding');
-    elif testt1 == 9:
-        st.write( 'water_spot');
-    else:
-        st.write(  'welding_line');
+    testt1=neigh1.predict(features);
+#     if testt1==1:
+#        st.write("crease") ;
+#     elif testt1== 2:
+#         st.write("crescent_gap");
+#     elif testt1 == 3:
+#         st.write("inclusion");
+#     elif testt1 == 4 :
+#        st.write("oil_spot");
+#     elif testt1 == 5:
+#         st.write("punching_hole");
+#     elif testt1 == 6:
+#         st.write("rolled_pit");
+#     elif testt1 == 7:
+#         st.write("silk_spot");
+#     elif testt1 == 8:
+#         st.write("waist folding");
+#     elif testt1 == 9:
+#         st.write("water_spot");
+#     else:
+#         st.write("welding_line");
     
     #INPUTS for YOLOV7
     img_size=1056
