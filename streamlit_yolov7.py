@@ -157,7 +157,7 @@ if __name__=='__main__':
     proList = ['contrast', 'dissimilarity', 'homogeneity', 'ASM', 'energy'];
     for j in range(0, len(proList)):
         properties[j]=(greycoprops(glcmMatrix, prop=proList[j]))
-    features = np.array([properties[0],properties[1],properties[2],properties[3],properties[4]);
+    features = np.array([properties[0],properties[1],properties[2],properties[3],properties[4]]);
     filename = 'gclm_model.sav'; 
     neigh1 = pickle.load(open(filename, 'rb'));
     testt1=neigh1.predict(X_test);
