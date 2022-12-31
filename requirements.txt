@@ -4,3 +4,4 @@ torch
 torchvision
 requests
 yolov7
+scikit-image
