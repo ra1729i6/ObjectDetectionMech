@@ -8,6 +8,10 @@ from PIL import Image
 from io import BytesIO
 import numpy as np
 import cv2
+import numpy as np
+from skimage.feature import greycomatrix,greycoprops
+import pickle
+import pandas as pd
 class Streamlit_YOLOV7(SingleInference_YOLOV7):
     '''
     streamlit app that uses yolov7
@@ -147,7 +151,36 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
 
 if __name__=='__main__':
     app=Streamlit_YOLOV7()
-
+    # GLCM Technique
+    img_gray = cv2.cvtColor(app.im0, cv2.COLOR_BGR2GRAY);
+    glcmMatrix=(greycomatrix(img_gray, [1], [0], levels=256))
+    proList = ['contrast', 'dissimilarity', 'homogeneity', 'ASM', 'energy'];
+    for j in range(0, len(proList)):
+        properties[j]=(greycoprops(glcmMatrix, prop=proList[j]))
+    features = np.array([properties[0],properties[1],properties[2],properties[3],properties[4]);
+    neigh1 = pickle.load(open(filename, 'rb'));
+    testt1=neigh1.predict(X_test);
+    if testt1==1:
+       label = 'crease' ;
+    elif testt1== 2:
+        label='crescent_gap';
+    elif testt1 == 3:
+        label'inclusion';
+    elif testt1 == 4 :
+        label='oil_spot';
+    elif testt1 == 5:
+        label='punching_hole';
+    elif testt1 == 6:
+        label='rolled_pit';
+    elif testt1 == 7:
+        label='silk_spot';
+    elif testt1 == 8:
+        label='waist folding';
+    elif testt1 == 9:
+        label='water_spot';
+    else:
+        label = 'welding_line';
+    
     #INPUTS for YOLOV7
     img_size=1056
     path_yolov7_weights="weights/best.pt"
