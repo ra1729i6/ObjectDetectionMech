@@ -152,7 +152,7 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
 if __name__=='__main__':
     app=Streamlit_YOLOV7()
     # GLCM Technique
-    img_gray = cv2.cvtColor(app.load_image_st(), cv2.COLOR_BGR2GRAY);
+    img_gray = cv2.cvtColor(app.st.file_uploader(), cv2.COLOR_BGR2GRAY);
     glcmMatrix=(greycomatrix(img_gray, [1], [0], levels=256))
     proList = ['contrast', 'dissimilarity', 'homogeneity', 'ASM', 'energy'];
     for j in range(0, len(proList)):
