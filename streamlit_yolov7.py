@@ -152,15 +152,15 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
 if __name__=='__main__':
     app=Streamlit_YOLOV7()
     # GLCM Technique
-    img_gray = cv2.cvtColor(st.file_uploader(label='upload image here!'), cv2.COLOR_BGR2GRAY);
-    glcmMatrix=(greycomatrix(img_gray, [1], [0], levels=256))
-    proList = ['contrast', 'dissimilarity', 'homogeneity', 'ASM', 'energy'];
-    for j in range(0, len(proList)):
-        properties[j]=(greycoprops(glcmMatrix, prop=proList[j]))
-    features = np.array([properties[0],properties[1],properties[2],properties[3],properties[4]]);
-    filename = 'gclm_model.sav'; 
-    neigh1 = pickle.load(open(filename, 'rb'));
-    testt1=neigh1.predict(features);
+#     img_gray = cv2.cvtColor(st.file_uploader(label='upload image here!'), cv2.COLOR_BGR2GRAY);
+#     glcmMatrix=(greycomatrix(img_gray, [1], [0], levels=256))
+#     proList = ['contrast', 'dissimilarity', 'homogeneity', 'ASM', 'energy'];
+#     for j in range(0, len(proList)):
+#         properties[j]=(greycoprops(glcmMatrix, prop=proList[j]))
+#     features = np.array([properties[0],properties[1],properties[2],properties[3],properties[4]]);
+#     filename = 'gclm_model.sav'; 
+#     neigh1 = pickle.load(open(filename, 'rb'));
+#     testt1=neigh1.predict(features);
 #     if testt1==1:
 #        st.write("crease") ;
 #     elif testt1== 2:
