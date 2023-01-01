@@ -12,6 +12,21 @@ import numpy as np
 from skimage.feature import greycomatrix,greycoprops
 import pickle
 import pandas as pd
+import base64
+def add_bg_from_local(image_file):
+    with open(image_file, "rb") as image_file:
+        encoded_string = base64.b64encode(image_file.read())
+    st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background-image: url(data:image/{"jpg"};base64,{encoded_string.decode()});
+        background-size: cover
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+    )
 class Streamlit_YOLOV7(SingleInference_YOLOV7):
     '''
     streamlit app that uses yolov7
@@ -87,10 +102,12 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
             """
             <style>
             .reportview-container {
-                background: url("misc/galaxy-11098__340.jpg")
+                #background: url("misc/galaxy-11098__340.jpg")
+                add_bg_from_local('galaxy-11098__340.jpg')
             }
         .sidebar .sidebar-content {
-                background: url("https://raw.githubusercontent.com/stevensmiley1989/STREAMLIT_YOLOV7/main/misc/IMG_0512_reduce.JPG")
+                #background: url("https://raw.githubusercontent.com/stevensmiley1989/STREAMLIT_YOLOV7/main/misc/IMG_0512_reduce.JPG")
+                add_bg_from_local('milky-way-2695569__340.jpg')
             }
             </style>
             """,
@@ -186,9 +203,19 @@ if __name__=='__main__':
     img_size=1056
     path_yolov7_weights="weights/best.pt"
     path_img_i="img_01_425503100_00018.jpg"
+    with open(path_img_i, "rb") as image_file:
+        encoded_string = base64.b64encode(image_file.read())
+#     st.markdown(
+#     f"""
+#     <style>
+#     .stApp {{
+#         background-image: url(data:image/{"jpg"};base64,{encoded_string.decode()});
+#         background-size: cover
+#     }} 
+    
     #INPUTS for webapp
     app.capt="Initial Image"
-    app.new_yolo_model(img_size,path_yolov7_weights,path_img_i)
+    app.new_yolo_model(data:image/{"jpg"};base64,{encoded_string.decode()},path_yolov7_weights,path_img_i)
     app.conf_thres=0.65
     app.load_model() #Load the yolov7 model
     
