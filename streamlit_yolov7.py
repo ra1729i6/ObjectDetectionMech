@@ -12,21 +12,21 @@ import numpy as np
 from skimage.feature import greycomatrix,greycoprops
 import pickle
 import pandas as pd
-import base64
-def add_bg_from_local(image_file):
-    with open(image_file, "rb") as image_file:
-        encoded_string = base64.b64encode(image_file.read())
-    st.markdown(
-    f"""
-    <style>
-    .stApp {{
-        background-image: url(data:image/{"jpg"};base64,{encoded_string.decode()});
-        background-size: cover
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-    )
+# import base64
+# def add_bg_from_local(image_file):
+#     with open(image_file, "rb") as image_file:
+#         encoded_string = base64.b64encode(image_file.read())
+#     st.markdown(
+#     f"""
+#     <style>
+#     .stApp {{
+#         background-image: url(data:image/{"jpg"};base64,{encoded_string.decode()});
+#         background-size: cover
+#     }}
+#     </style>
+#     """,
+#     unsafe_allow_html=True
+#     )
 class Streamlit_YOLOV7(SingleInference_YOLOV7):
     '''
     streamlit app that uses yolov7
@@ -102,12 +102,12 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
             """
             <style>
             .reportview-container {
-                #background: url("misc/galaxy-11098__340.jpg")
-                add_bg_from_local('galaxy-11098__340.jpg')
+                background: url("https://cdn.spacetelescope.org/archives/images/screen/heic0506a.jpg")
+                #add_bg_from_local('galaxy-11098__340.jpg')
             }
         .sidebar .sidebar-content {
-                #background: url("https://raw.githubusercontent.com/stevensmiley1989/STREAMLIT_YOLOV7/main/misc/IMG_0512_reduce.JPG")
-                add_bg_from_local('milky-way-2695569__340.jpg')
+                background: url("https://cdn.spacetelescope.org/archives/images/screen/opo9941a.jpg")
+                #add_bg_from_local('milky-way-2695569__340.jpg')
             }
             </style>
             """,
