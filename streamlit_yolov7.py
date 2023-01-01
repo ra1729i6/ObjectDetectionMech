@@ -87,7 +87,7 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
             """
             <style>
             .reportview-container {
-                background: url("https://raw.githubusercontent.com/stevensmiley1989/STREAMLIT_YOLOV7/main/misc/IMG_0512_reduce.JPG")
+                background: url("misc/galaxy-11098__340.jpg")
             }
         .sidebar .sidebar-content {
                 background: url("https://raw.githubusercontent.com/stevensmiley1989/STREAMLIT_YOLOV7/main/misc/IMG_0512_reduce.JPG")
@@ -185,7 +185,7 @@ if __name__=='__main__':
     #INPUTS for YOLOV7
     img_size=1056
     path_yolov7_weights="weights/best.pt"
-    path_img_i="https://raw.githubusercontent.com/stevensmiley1989/STREAMLIT_YOLOV7/main/test_images/DJI_0028_fps24_frame00000040.jpg"
+    path_img_i="misc/img_01_425503100_00018.jpg"
     #INPUTS for webapp
     app.capt="Initial Image"
     app.new_yolo_model(img_size,path_yolov7_weights,path_img_i)
