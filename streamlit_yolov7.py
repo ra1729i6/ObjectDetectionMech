@@ -202,9 +202,9 @@ if __name__=='__main__':
     #INPUTS for YOLOV7
     img_size=1056
     path_yolov7_weights="weights/best.pt"
-    path_img_i="img_01_425503100_00018.jpg"
-    with open(path_img_i, "rb") as image_file:
-        encoded_string = base64.b64encode(image_file.read())
+    path_img_i="https://storage.googleapis.com/kagglesdsdata/datasets/711184/1240214/3/img_01_424826300_00950.jpg?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=databundle-worker-v2%40kaggle-161607.iam.gserviceaccount.com%2F20230101%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20230101T155850Z&X-Goog-Expires=345600&X-Goog-SignedHeaders=host&X-Goog-Signature=6da32fb717306045b6e73491f133928858d36f594bdad2e2ebc3c213400527411a56af75210c4ea727abef72e533ad20d12299456598b241dd84beb5211f86d8cb57a1a7fa1ef6ccea262ca44ecf3dd31476c6de514d248fa0b4b4a9414e95a9e44b117a03a4a962e3aebbefaaddbe93a4c8d557b84fe112a709b222fa9bfd243dadc19840f94338401b40324e6ec2e1bc0d4056c7e5b7cfa5e43241b62e74c87036d3ba81f21ee04b737b6f816ba02437ec6a773401020afb48e660e301324deaaac2d3191b8747042c965bea7adb352d26ec3aba14d269930eeb1a6dec998b9ea1aa42819c6229e200cb3fe12a83026cdc9a4ca87933070ee92bf9568d185e"
+#     with open(path_img_i, "rb") as image_file:
+#         encoded_string = base64.b64encode(image_file.read())
 #     st.markdown(
 #     f"""
 #     <style>
@@ -215,7 +215,7 @@ if __name__=='__main__':
     
     #INPUTS for webapp
     app.capt="Initial Image"
-    app.new_yolo_model(encoded_string.decode(),path_yolov7_weights,path_img_i)
+    app.new_yolo_model(path_img_i,path_yolov7_weights,path_img_i)
     app.conf_thres=0.65
     app.load_model() #Load the yolov7 model
     
