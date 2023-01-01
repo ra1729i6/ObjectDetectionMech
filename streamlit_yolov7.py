@@ -215,7 +215,7 @@ if __name__=='__main__':
     
     #INPUTS for webapp
     app.capt="Initial Image"
-    app.new_yolo_model(url(data:image/{"jpg"};base64,{encoded_string.decode()}),path_yolov7_weights,path_img_i)
+    app.new_yolo_model(data:image/{"jpg"};base64,{encoded_string.decode()},path_yolov7_weights,path_img_i)
     app.conf_thres=0.65
     app.load_model() #Load the yolov7 model
     
