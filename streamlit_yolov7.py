@@ -185,7 +185,7 @@ if __name__=='__main__':
     #INPUTS for YOLOV7
     img_size=1056
     path_yolov7_weights="weights/best.pt"
-    path_img_i="misc/img_01_425503100_00018.jpg"
+    path_img_i="http://misc/img_01_425503100_00018.jpg"
     #INPUTS for webapp
     app.capt="Initial Image"
     app.new_yolo_model(img_size,path_yolov7_weights,path_img_i)
